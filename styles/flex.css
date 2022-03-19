@@ -1,0 +1,29 @@
+div.grid-container {
+  background-color: grey;
+  height: auto;
+  width: cover;
+  display: grid;
+  counter-reset: section;
+  gap: 20px;
+  grid-template-columns: repeat(12, 1fr);
+}
+@media screen and (min-width: 480px) {
+  div.grid-container {
+    display: grid;
+    counter-reset: section;
+    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+div.grid-item {
+  background-color: blue;
+  height: 200px;
+}
+div.grid-item::before {
+  counter-increment: section;
+
+  content: "Grid Item" counter(section);
+  color: black;
+  font-weight: bold;
+}

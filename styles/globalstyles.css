@@ -1,0 +1,88 @@
+.global-foot-container {
+  background: radial-gradient(ellipse at top, lightgrey 0, black 100%);
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  min-height: 70px;
+}
+
+.global-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: teal;
+}
+
+.global-content {
+  flex-grow: 1;
+}
+
+.global-nav-container {
+  border: 1px solid black;
+  margin-bottom: auto;
+  display: flex;
+  background: radial-gradient(ellipse at top, lightgrey 0, black 100%);
+}
+
+.global-nav-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.global-header-text {
+  width: max-content;
+  background: #42b983;
+  background: -webkit-linear-gradient(to right, #42b983 0%, #61dafb 51%);
+  background: -moz-linear-gradient(to right, #42b983 0%, #61dafb 51%);
+  background: linear-gradient(to right, #42b983 0%, #61dafb 51%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.global-nav-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+nav {
+  width: max-content;
+}
+
+.column-one {
+  display: flex;
+  justify-content: flex-start;
+  padding-right: 10px;
+  max-width: max-content;
+}
+
+.column-two {
+  /* display: flex;
+  justify-content: flex-start; */
+  padding: 5px;
+  width: max-content;
+}
+
+.global-logo {
+  background: #42b983;
+  background: -webkit-linear-gradient(to right, #42b983 0%, #61dafb 51%);
+  background: -moz-linear-gradient(to right, #42b983 0%, #61dafb 51%);
+  background: linear-gradient(to right, #42b983 0%, #61dafb 51%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.insignia {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.global-icon-wrapper {
+  height: 75px;
+  width: max-content;
+}

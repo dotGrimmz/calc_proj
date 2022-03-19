@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles/grid-system.css" />
+  </head>
+  <body class="container">
+    <div class="row">
+      <div class="col">
+        <h1>The Grid System</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>
+          This column takes up the full 12 columns from screen sizes extra small
+          and larger
+        </p>
+      </div>
+    </div>
+    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+
+    <div class="row grid-row-container">
+      <div class="col half-column">
+        <img src="../images/Headshot.jpg" class="example-img" />
+      </div>
+      <div class="col half-column">
+        <ul>
+          <li>this would be the first item</li>
+          <li>this would be the second item</li>
+        </ul>
+      </div>
+
+      <div class="col half-column">
+        <p>this column takes up</p>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6 col-lg-3ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+.grid-column-container {
+  border: 1px red solid;
+  display: flex;
+  justify-content: center;
+}
+
+/* .grid-column-container::before {
+  content: "Grid Column Container";
+} */
+
+.grid-row-container {
+  padding: 10px;
+  border: 2px green dashed;
+}
+
+.example-img {
+  height: 73px;
+  width: 73px;
+}
+
+.half-column {
+  margin: 5px;
+  border: 1px grey solid;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+}
+
+/* .quarter-column {
+  margin: 5px;
+  border: 1px purple solid;
+  height: 75px;
+  width: auto;
+}
+*/
+.max-column {
+  margin: 5px;
+  border: 1px pink solid;
+  height: 75px;
+  width: auto;
+}
+
+/* body::before {
+  content: "This is the body container.. all elements on the UI / Screen will be nested in this element";
+} */
+/* 
+.grid-row-container::before {
+  content: "Grid Row Container";
+} */

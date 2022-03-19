@@ -1,0 +1,72 @@
+.nav-text {
+  padding: 3px;
+  margin-left: 4%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: "purple";
+}
+nav {
+  display: flex;
+}
+
+.nav-list-container {
+  width: auto;
+  margin-top: 5px;
+  display: flex;
+
+  align-self: flex-end;
+}
+.nav-list {
+  margin: 10px;
+}
+
+.nav-link {
+  color: red;
+}
+
+.nav-link:hover {
+  color: yellow;
+  transition: 5;
+}
+
+.icon-wrapper {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  padding-right: 10px;
+  padding-left: 5px;
+  transition: transform 0.9s;
+}
+
+.icon-wrapper:hover {
+  transform: scale(1.5);
+}
+
+.footer-container {
+  border: 1px steelblue solid;
+}
+
+.fieldset-section {
+  margin-top: 50px;
+}
+
+.signup-section {
+  border: 2px solid blue;
+  margin-top: 50px;
+  width: 300px;
+}
+
+.signup-section-third {
+  border: 2px solid blue;
+  margin-top: 50px;
+  width: 300px;
+  align-self: center;
+}
+.grimmz-container {
+  margin-top: 15px;
+}
+
+.grid-container {
+  border: 1px red solid;
+  display: flex;
+}
