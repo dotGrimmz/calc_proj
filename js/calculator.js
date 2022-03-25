@@ -25,16 +25,32 @@ class Calculator {
   appendNumber(number) {
     if (this.currentOperand.includes(".") && number === ".") return;
     this.currentOperand = this.currentOperand + number.toString();
-    // console.log(this.currentOperand);
+    console.log(this);
   }
 
-  chooseOperation() {
+  chooseOperation(operator) {
     if (this.currentOperand === "") return;
-    // selecting the operation needed to compute the problem
+    // assign the paramter operator to the operation property on the instance;
+    this.operation = operator;
+    // assign currentOperand to previousOperand
+    this.previousOperand = this.currentOperand;
+    // reset currentOperand to an empty string
+    this.currentOperand = "";
+    console.log(this);
   }
 
+  // Needs to take a paramter
   compute() {
-    // will render the solution if all necessary variables are present
+    // create an if statement for each operation and consider more to add that are not listed
+    // on the calculator template
+    let result;
+    if (this.operation === "+") {
+      result = this.currentOperand + this.previousOperand;
+
+      // this.currentOperand are strings and may need to be parsed to numbers in order to compute
+    }
+
+    return result;
   }
 
   updateDisplay() {
@@ -66,15 +82,25 @@ class Calculator {
   }
 }
 
-const calcExample = new Calculator();
+const numButtons = document.querySelectorAll("[data-number]");
+const operatorButtons = document.querySelectorAll("[data-operation]");
+const previousOperandTextElement = document.querySelector(
+  ".data-previous-operand"
+);
+const currentOperandTextElement = document.querySelector(
+  ".data-current-operand"
+);
+
+const calcExample = new Calculator(
+  previousOperandTextElement,
+  currentOperandTextElement
+);
 
 // start at zero's
 console.log(calcExample);
-
-const numButtons = document.querySelectorAll("[data-number]");
-
 // Create variables for the operation buttons and assign click event listeners to them which then call the
 // calExample.chooseOperation method
+
 // Handle chooseOperation
 // assign the paramter operator to the operation property on the instance;
 // assign currentOperand to previousOperand
@@ -83,6 +109,13 @@ const numButtons = document.querySelectorAll("[data-number]");
 for (i = 0; i <= numButtons.length - 1; i++) {
   numButtons[i].addEventListener("click", (event) => {
     calcExample.appendNumber(event.target.innerText);
+    calcExample.updateDisplay();
+  });
+}
+
+for (i = 0; i <= operatorButtons.length - 1; i++) {
+  operatorButtons[i].addEventListener("click", (event) => {
+    calcExample.chooseOperation(event.target.innerText);
     calcExample.updateDisplay();
   });
 }
