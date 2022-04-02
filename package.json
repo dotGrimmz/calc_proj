@@ -1,0 +1,19 @@
+{
+  "name": "pivot-software",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotGrimmz/calc_proj.git"
+  },
+  "author": "Rakeem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dotGrimmz/calc_proj/issues"
+  },
+  "homepage": "https://github.com/dotGrimmz/calc_proj#readme"
+}

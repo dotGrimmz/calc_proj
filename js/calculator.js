@@ -14,6 +14,7 @@ class Calculator {
     // This will be tied to the AC button to clear the calculator
     this.previousOperandTextEle = "";
     this.currentOperandTextEle = "";
+    this.operation = undefined;
   }
 
   delete() {
@@ -25,7 +26,6 @@ class Calculator {
   appendNumber(number) {
     if (this.currentOperand.includes(".") && number === ".") return;
     this.currentOperand = this.currentOperand + number.toString();
-    console.log(this);
   }
 
   chooseOperation(operator) {
@@ -43,20 +43,38 @@ class Calculator {
   compute() {
     // create an if statement for each operation and consider more to add that are not listed
     // on the calculator template
-    let result;
-    if (this.operation === "+") {
-      result = this.currentOperand + this.previousOperand;
-
-      // this.currentOperand are strings and may need to be parsed to numbers in order to compute
+    let computation;
+    const prev = parseFloat(this.previousOperand);
+    const current = parseFloat(this.currentOperand);
+    if (isNaN(prev) || isNaN(current)) return;
+    switch (this.operation) {
+      case "+":
+        computation = prev + current;
+        break;
+      case "-":
+        computation = prev - current;
+        break;
+      case "*":
+        computation = prev * current;
+        break;
+      case "÷":
+        computation = prev / current;
+        break;
+      default:
+        return;
     }
-
-    return result;
+    this.currentOperand = computation;
+    this.operation = undefined;
+    this.previousOperand = "";
   }
 
   updateDisplay() {
+    // console.log("update display");
+    console.log(this.getDisplayNumber("99"));
     this.currentOperandTextEle.innerText = this.getDisplayNumber(
       this.currentOperand
     );
+
     if (this.operation != null) {
       this.previousOperandTextEle.innerText = `${this.getDisplayNumber(
         this.previousOperand
@@ -85,11 +103,14 @@ class Calculator {
 const numButtons = document.querySelectorAll("[data-number]");
 const operatorButtons = document.querySelectorAll("[data-operation]");
 const previousOperandTextElement = document.querySelector(
-  ".data-previous-operand"
+  "[data-previous-operand]"
 );
 const currentOperandTextElement = document.querySelector(
-  ".data-current-operand"
+  "[data-current-operand]"
 );
+
+const equalsButton = document.querySelector("[data-equals]");
+const deleteButton = document.querySelector("[data-delete]");
 
 const calcExample = new Calculator(
   previousOperandTextElement,
@@ -97,7 +118,7 @@ const calcExample = new Calculator(
 );
 
 // start at zero's
-console.log(calcExample);
+console.log(Buttons);
 // Create variables for the operation buttons and assign click event listeners to them which then call the
 // calExample.chooseOperation method
 
